@@ -7,21 +7,187 @@
 поиграть. Часто организаторы предоставляют возможность покупки тех же игр прямо
 на месте или возможность сделать заказ.
 
+\textbf{\texttt{Анализ}} страниц сайтах об игротеках показал, что
+\textbf{\texttt{обычно}} информация об игротеке включает дату, время начала,
+продолжительность или время окончания, адрес проведения и стоимость участия.
+Также представляется набор игр, по которым проводится игротека.
+
+Информация об играх 
+
 \section{Постановка задачи}
 
 Задача.
 
 \section{Формализация данных}
 
-Из анализа предметной области информация о сущностях.
+На основе анализа предметной области, ..., база данных должна содержать
+информацию о:
 
+\begin{itemize}
+    \item игротеках;
+    \item организаторах;
+    \item местах проведения;
+    \item настольных играх, по которым проводятся игротеки;
+    \item игроках;
+    \item пользователях.
+\end{itemize}
+
+Сведения о каждой представленной сущности представлены в таблице~\ref{tab:01}.
+
+\textbf{\texttt{Типы здесь?}}
+
+\begin{table}[h!]
+    \begin{center}
+    \begin{threeparttable}
+        \captionsetup{format=hang,justification=raggedright,
+                      singlelinecheck=off}
+        \caption{\label{tab:01}Категории данных и сведения о них}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|p{4cm}|p{12cm}|}
+            \hline
+            \bfseries Категория & \bfseries Сведения\\
+            \hline
+            Игротека & ID\par
+                       Название\par
+                       Дата проведения\par
+                       Время начала\par
+                       Продолжительность\par
+                       Стоимость участия\par
+                       Возможность покупки игр\par
+                       Организатор\par
+                       Место проведения\\
+            \hline
+            \begin{minipage}[t]{\linewidth}
+                              \begin{multicols}{1}
+                                  \begin{itemize}[labelsep=0mm,
+                                                  nosep,after=\strut]
+                                      \item[] Организатор
+                                      \item[]
+                                      \item[]
+                                      \item[]
+                                      \item[]
+                                  \end{itemize}
+                              \end{multicols}
+                          \end{minipage}
+                     & \begin{minipage}[t]{\linewidth}
+                              \begin{multicols}{2}
+                                  \begin{itemize}[labelsep=0mm,
+                                                  nosep,after=\strut]
+                                      \item[] ID
+                                      \item[] Название
+                                      \item[] Адрес
+                                      \item[] Сайт
+                                      \item[] Email
+                                      \item[] Телефон
+                                  \end{itemize}
+                              \end{multicols}
+                          \end{minipage}\\
+            \hline
+            Место проведения & ID\par
+                               Название\par
+                               Тип (магазин, кафе, антикафе и т.~п.)\par
+                               Адрес\par
+                               Сайт\par
+                               Email\par
+                               Телефон\\
+            \hline
+            Настольная игра & ID\par
+                              Название\par
+                              Производитель\par
+                              Год выпуска\par
+                              Минимальный возраст\par
+                              Максимальный возраст\par
+                              Минимальное число игроков\par
+                              Максимальное число игроков\par
+                              Минимальное время игры\par
+                              Максимальное время игры\\
+            \hline
+            Игрок & ID\par
+                    Имя\par
+                    Рейтинг\par
+                    Лига\\
+            \hline
+            Пользователь & ID\par
+                           Логин\par
+                           Пароль\par
+                           Роль\\
+           \hline
+        \end{tabular}
+    \end{threeparttable}
+    \end{center}
+\end{table} 
+
+\clearpage
 \section{Описание типов пользователей}
 
-Админ
+\textbf{\texttt{Продумать просмотр, чего нужен каждому}}
 
-Организатор
+\begin{table}[h!]
+    \begin{center}
+    \begin{threeparttable}
+        \captionsetup{format=hang,justification=raggedright,
+                      singlelinecheck=off}
+        \caption{\label{tab:02}Описание типов пользователей}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|p{3.3cm}|p{5.2cm}|p{7cm}|}
+            \hline
+            \bfseries Тип & \bfseries Описание &
+            \bfseries Функциональность\\
+            \hline
+            Гость & Неавторизированный\par пользователь
+                  & \begin{minipage}[t]{\linewidth}
+                      \begin{itemize}[nosep,after=\strut]
+                        \item Просмотр списка настольных игр и игротек
+                        \item Авторизация
+                        \item Регистрация
+                      \end{itemize}
+                  \end{minipage}\\
+            \hline
+            Игрок & Авторизированный пользователь
+                  & \begin{minipage}[t]{\linewidth}
+                      \begin{itemize}[nosep,after=\strut]
+                          \item Просмотр списка настольных игр и игротек
+                          \item Составление списка предпочитаемых игр
+                          \item Регистрация на игротеки
+                      \end{itemize}
+                  \end{minipage}\\
+            \hline
+            Организатор & Авторизированный пользователь\par
+                          с возможностью работы с игротеками
+                  & \begin{minipage}[t]{\linewidth}
+                      \begin{itemize}[nosep,after=\strut]
+                          \item Просмотр списка настольных игр, игротек, мест
+                        проведения, организаторов\
+                          \item Регистрация новых игротек
+                          \item Просмотр списка зарегистрированных на игротеку
+                        участников
+                          \item Формирование заявки на добавление нового места
+                        проведения при его отсутствии в базе
+                          \item Формирование заявки на добавление игры при ее
+                        отсутствии в базе
+                      \end{itemize}
+                  \end{minipage}\\
+            \hline
+            Администратор & Авторизированный пользователь\par
+                            с повышенным уровнем полномочий
+                  & \begin{minipage}[t]{\linewidth}
+                      \begin{itemize}[nosep,after=\strut]
+                          \item Просмотр списка настольных игр, игротек, мест
+                        проведения, организаторов, пользователей
+                          \item Изменение информации о настольных играх, местах
+                        проведения, организаторах, игротеках
+                          \item Одобрение или отклонение заявок от
+                        организаторов
+                          \item Изменение прав доступа пользователей
+                          \item Удаление пользователей
+                      \end{itemize}
+                  \end{minipage}\\
+            \hline
+        \end{tabular}
+    \end{threeparttable}
+    \end{center}
+\end{table} 
 
-Игрок
 
 \section{Анализ существующих решений}
 
