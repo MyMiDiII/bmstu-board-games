@@ -34,6 +34,8 @@
 
 Сведения о каждой представленной сущности представлены в таблице~\ref{tab:01}.
 
+\textbf{\texttt{Требования!!!}}
+
 \textbf{\texttt{Типы здесь?}}
 
 \begin{table}[h!]
@@ -47,77 +49,166 @@
             \hline
             \bfseries Категория & \bfseries Сведения\\
             \hline
-            Игротека & ID\par
-                       Название\par
-                       Дата проведения\par
-                       Время начала\par
-                       Продолжительность\par
-                       Стоимость участия\par
-                       Возможность покупки игр\par
-                       Организатор\par
-                       Место проведения\\
+            \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{1}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] Игротека
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}
+          & \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{2}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] ID
+                  \item[] Название
+                  \item[] Организатор
+                  \item[] Время начала
+                  \item[] Дата проведения
+                  \item[] Возможность покупки игр
+                  \item[] Место проведения
+                  \item[] Продолжительность
+                  \item[] Стоимость участия
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}\\
             \hline
             \begin{minipage}[t]{\linewidth}
-                              \begin{multicols}{1}
-                                  \begin{itemize}[labelsep=0mm,
-                                                  nosep,after=\strut]
-                                      \item[] Организатор
-                                      \item[]
-                                      \item[]
-                                      \item[]
-                                      \item[]
-                                  \end{itemize}
-                              \end{multicols}
-                          \end{minipage}
-                     & \begin{minipage}[t]{\linewidth}
-                              \begin{multicols}{2}
-                                  \begin{itemize}[labelsep=0mm,
-                                                  nosep,after=\strut]
-                                      \item[] ID
-                                      \item[] Название
-                                      \item[] Адрес
-                                      \item[] Сайт
-                                      \item[] Email
-                                      \item[] Телефон
-                                  \end{itemize}
-                              \end{multicols}
-                          \end{minipage}\\
+              \begin{multicols}{1}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] Организатор
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}
+          & \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{2}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] ID
+                  \item[] Название
+                  \item[] Адрес
+                  \item[] Сайт
+                  \item[] Email
+                  \item[] Телефон
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}\\
             \hline
-            Место проведения & ID\par
-                               Название\par
-                               Тип (магазин, кафе, антикафе и т.~п.)\par
-                               Адрес\par
-                               Сайт\par
-                               Email\par
-                               Телефон\\
+            \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{1}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] Место 
+                  \item[] проведения
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}
+          & \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{2}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] ID
+                  \item[] Адрес
+                  \item[] Сайт
+                  \item[] Название
+                  \item[] Тип
+                  \item[] Email
+                  \item[] Телефон
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}\\
             \hline
-            Настольная игра & ID\par
-                              Название\par
-                              Производитель\par
-                              Год выпуска\par
-                              Минимальный возраст\par
-                              Максимальный возраст\par
-                              Минимальное число игроков\par
-                              Максимальное число игроков\par
-                              Минимальное время игры\par
-                              Максимальное время игры\\
+            \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{1}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] Настольная
+                  \item[] игра
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                  \item[]
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}
+          & \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{2}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] ID
+                  \item[] Название
+                  \item[] Производитель
+                  \item[] Год выпуска
+                  \item[] Мин. число игроков
+                  \item[] Макс. число игроков
+                  \item[] Мин. возраст
+                  \item[] Макс. возраст
+                  \item[] Мин. время игры
+                  \item[] Макс. время игры
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}\\
             \hline
-            Игрок & ID\par
-                    Имя\par
-                    Рейтинг\par
-                    Лига\\
+            \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{1}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] Игрок
+                  \item[]
+                  \item[]
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}
+          & \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{2}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] ID
+                  \item[] Имя
+                  \item[] Лига
+                  \item[] Рейтинг
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}\\
             \hline
-            Пользователь & ID\par
-                           Логин\par
-                           Пароль\par
-                           Роль\\
+            \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{0}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] Пользователь
+                  \item[]
+                  \item[]
+                  \item[]
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}
+          & \begin{minipage}[t]{\linewidth}
+              \begin{multicols}{2}
+                \begin{itemize}[labelsep=0mm,nosep,after=\strut]
+                  \item[] ID
+                  \item[] Роль
+                  \item[] Логин
+                  \item[] Пароль
+                \end{itemize}
+              \end{multicols}
+            \end{minipage}\\
            \hline
         \end{tabular}
     \end{threeparttable}
     \end{center}
 \end{table} 
 
-\clearpage
 \section{Описание типов пользователей}
 
 \textbf{\texttt{Продумать просмотр, чего нужен каждому}}
