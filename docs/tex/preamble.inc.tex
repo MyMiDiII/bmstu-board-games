@@ -64,7 +64,10 @@
 % Lists
 \usepackage{enumitem}
 \renewcommand{\labelitemi}{$-$}
-\setlist{nosep, leftmargin=\parindent, wide}
+% вторые и след строки выровнены по первой
+ \setlist{nosep, labelindent=\parindent, leftmargin=*}
+% вторые и след строки выровнены по левому краю
+%\setlist{nosep, leftmargin=\parindent, wide}
 \usepackage{multicol}
 %
 %% Comments
