@@ -9,3 +9,6 @@
 
 # Additional
 *add/
+
+# Visual Studio
+*.vs/
