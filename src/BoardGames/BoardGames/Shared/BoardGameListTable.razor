@@ -1,0 +1,59 @@
+﻿<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Производитель</th>
+                <th>Год выпуска</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (games == null)
+            {
+                <tr>Загрузка...</tr>
+            }
+            else if (games.Count == 0)
+            {
+                <tr>Где данные? Какие данные?</tr>
+            }
+            else
+            {
+                @foreach (var item in games)
+                {
+                    <tr>
+                        <th>@item.Title</th>
+                        <th>@item.Producer</th>
+                        <th>@item.Year</th>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@code
+{
+    private List<BoardGame> games { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(3000);
+
+        games = new List<BoardGame>()
+        {
+            new BoardGame()
+            {
+                Title = "Мрачная Гавань",
+                Producer = "Hobby World",
+                Year = 2018
+            },
+            new BoardGame()
+            {
+                Title = "Пандемия: Наследие. Первый сезон",
+                Producer = "Стиль Жизни",
+                Year = 2017
+            }
+        };
+    }
+}
