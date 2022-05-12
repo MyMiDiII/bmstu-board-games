@@ -34,26 +34,14 @@
 
 @code
 {
-    private List<BoardGame> games { get; set; }
+    [Inject]
+    public IBoardGameService? BoardGameService { get; set; }
+
+    private List<BoardGame>? games { get; set; }
 
     protected override async Task OnInitializedAsync()
-    {
+    {       
         await Task.Delay(3000);
-
-        games = new List<BoardGame>()
-        {
-            new BoardGame()
-            {
-                Title = "Мрачная Гавань",
-                Producer = "Hobby World",
-                Year = 2018
-            },
-            new BoardGame()
-            {
-                Title = "Пандемия: Наследие. Первый сезон",
-                Producer = "Стиль Жизни",
-                Year = 2017
-            }
-        };
+        games = BoardGameService?.GetBoardGames();
     }
 }
