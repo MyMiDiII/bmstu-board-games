@@ -19,4 +19,5 @@ open :
 	xdg-open pdf/report.pdf
 
 clear :
-	rm -rf ./pdf/ ./out/
+	rm -rf ./pdf/report.pdf ./out/
+	cd ./tex && make -f MakefileTex clear
