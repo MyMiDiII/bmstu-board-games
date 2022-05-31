@@ -4,7 +4,7 @@ texReport : build move
 
 build : report.tex
 	pdflatex -shell-escape report.tex
-	# bibtex report
+	bibtex report
 	pdflatex -shell-escape report.tex
 	pdflatex -shell-escape report.tex
 
@@ -15,5 +15,5 @@ move : report.pdf
 	-mv *.aux *.log *.bbl *.blg *.dvi *.out *.toc ../out/ 
 
 clear :
-	-rm -rf ../out/ ../pdf/
+	-rm -rf ../out/ ../pdf/report.pdf
 	-rm *.aux *.log *.bbl *.blg *.dvi *.out *.pdf

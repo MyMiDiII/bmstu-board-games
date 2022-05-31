@@ -40,6 +40,16 @@
 	\end{figure}
 }
 
+\newcommand{\scheme}[4] {
+	\begin{figure}[ht!]
+		\center{
+            \includegraphics[height=#1]{../data/schemes/#2}
+            \caption{#3}
+            \label{sch:#4}
+        }
+	\end{figure}
+}
+
 \newcommand{\twoimg}[7] {
     \begin{figure}[ht!]
     \centering
@@ -64,10 +74,14 @@
 % Lists
 \usepackage{enumitem}
 \renewcommand{\labelitemi}{$-$}
-\setlist{nosep, leftmargin=\parindent, wide}
+% вторые и след строки выровнены по первой
+\setlist{nosep, labelindent=\parindent, leftmargin=*}
+% вторые и след строки выровнены по левому краю
+%\setlist{nosep, leftmargin=\parindent, wide}
+\usepackage{multicol}
 %
-%% Comments
-%\usepackage{comment}
+% Comments
+\usepackage{comment}
 %
 % Text
 \usepackage{amstext}
@@ -83,6 +97,7 @@
 \usepackage{longtable,ltcaption,booktabs}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{array}
 
 % PDF
 \usepackage{pdfpages}
