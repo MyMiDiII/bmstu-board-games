@@ -1,17 +1,30 @@
 from bs4 import BeautifulSoup
 import requests
 
-site = "https://hobbygames.ru/nastolnie?results_per_page=60&parameter_type=0"
-data = requests.get(site)
-code = data.text
+GAMES_SITE = "https://hobbygames.ru/nastolnie?results_per_page=60"
+SEP = "&"
+PAGE_TMP = "page=%d"
 
-soup = BeautifulSoup(code, 'lxml')
-print(soup.prettify())
+def loadGamesInfo(siteURL):
+    pageCode = requests.get(siteURL).text
+    soup = BeautifulSoup(pageCode, 'lxml')
 
-print()
-print('NEW')
-product = soup.find_all('a', class_='name')
+    lastPageRef = soup.find('a', class_='last', href=True)['href']
+    lastPage = int(lastPageRef.partition('?page=')[-1].partition('&')[0])
 
-for i, item in enumerate(product):
-    print(i, ". ", item.get_text(strip=True), sep="")
-# print(product)
+    gamesNum = 1
+    for i in range(1, lastPage + 1):
+        curPageURL = (siteURL + SEP + PAGE_TMP) % i
+
+        pageCode = requests.get(curPageURL).text
+        soup = BeautifulSoup(pageCode, 'lxml')
+
+        products = soup.find_all('a', class_='name')
+
+        for product in products:
+            print(gamesNum, ". ", product.get_text(strip=True), sep="")
+            gamesNum += 1
+
+
+if __name__ == "__main__":
+    loadGamesInfo(GAMES_SITE)
