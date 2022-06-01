@@ -10,5 +10,8 @@ print(soup.prettify())
 
 print()
 print('NEW')
-product = soup.find('a', class_='name').get_text(strip=True)
-print(product)
+product = soup.find_all('a', class_='name')
+
+for i, item in enumerate(product):
+    print(i, ". ", item.get_text(strip=True), sep="")
+# print(product)
