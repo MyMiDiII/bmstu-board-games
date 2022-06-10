@@ -1,4 +1,8 @@
-﻿<div class="table-responsive">
+﻿@page "/favoritegames"
+
+<h3>Избранные игры</h3>
+
+<div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -25,31 +29,31 @@
                         <td>@item.Producer</td>
                         <td>@item.Year</td>
                         <td>
-                            <button @onclick="() => AddToFavorite(item)">Избранное</button>
+                            <button @onclick="() => RemoveFromFavorite(item)">Удалить</button>
                         </td>
                     </tr>
                 }
             }
         </tbody>
     </table>
-
 </div>
 
-@code
-{
+@code {
     [Inject]
-    public IBoardGameService? BoardGameService { get; set; }
+    IBoardGameService? BoardGameService { get; set; }
 
-    private List<BoardGame>? games { get; set; }
+    List<BoardGame>? games;
 
     protected override async Task OnInitializedAsync()
     {       
         //await Task.Delay(3000);
-        games = BoardGameService?.GetBoardGames();
+        games = BoardGameService?.GetFavoriteBoardGames();
     }
 
-    private void AddToFavorite(BoardGame boardGame)
+    private void RemoveFromFavorite(BoardGame boardGame)
     {
-        BoardGameService?.AddBoardGameToFavorite(boardGame); 
+        BoardGameService?.RemoveBoardGameFromFavorite(boardGame);
+        games = BoardGameService?.GetFavoriteBoardGames();
+        StateHasChanged(); 
     }
 }

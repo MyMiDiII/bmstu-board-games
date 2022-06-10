@@ -4,33 +4,56 @@ namespace BoardGames.Services
 {
     public class BoardGameService : IBoardGameService
     {
-        public BoardGameService()
-        {
+        private IAuthorizeService _authorizeService;
 
+        public BoardGameService(IAuthorizeService authorizeService)
+        {
+            _authorizeService = authorizeService;
         }
 
         public List<BoardGame> GetBoardGames()
         {
-            return new List<BoardGame>()
+            return BoardGamesContext.BoardGames;
+        }
+
+        public List<BoardGame> GetFavoriteBoardGames()
+        {
+            var userID = _authorizeService.GetCurrentUserID(); 
+            var userBoardGameIDs = BoardGamesContext.FavoriteBoardGames
+                .Where(x => x.UserID == userID)
+                .Select(x => x.BoardGameID)
+                .ToList();
+            return BoardGamesContext.BoardGames
+                .Where(x => userBoardGameIDs.Contains(x.ID)).ToList(); 
+        }
+
+        public void AddBoardGameToFavorite(BoardGame boardGame)
+        {
+            var userID = _authorizeService.GetCurrentUserID(); 
+            if (!BoardGamesContext.FavoriteBoardGames.Any(x => x.UserID == userID && x.BoardGameID == boardGame.ID))
             {
-                new BoardGame()
+                BoardGamesContext.FavoriteBoardGames.Add(new FavoriteBoardGame()
                 {
-                    Title = "Мрачная Гавань",
-                    Producer = "Hobby World",
-                    Year = 2018
-                },
-                new BoardGame()
-                {
-                    Title = "Пандемия: Наследие. Первый сезон",
-                    Producer = "Стиль Жизни",
-                    Year = 2017
-                }
-            };
+                    ID = 0,
+                    BoardGameID = boardGame.ID,
+                    UserID = userID
+                });
+            }
+        }
+
+        public void RemoveBoardGameFromFavorite(BoardGame boardGame)
+        {
+            var userID = _authorizeService.GetCurrentUserID(); 
+            BoardGamesContext.FavoriteBoardGames
+                .RemoveAll(x => x.UserID == userID && x.BoardGameID == boardGame.ID);
         }
     }
 
     public interface IBoardGameService
     {
         List<BoardGame> GetBoardGames();
+        List<BoardGame> GetFavoriteBoardGames();
+        void AddBoardGameToFavorite(BoardGame boardGame);
+        void RemoveBoardGameFromFavorite(BoardGame boardGame);
     }
 }

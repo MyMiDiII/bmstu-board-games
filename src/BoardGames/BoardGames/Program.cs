@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.Components.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//builder.Services.AddDbContext
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<IBoardGameService, BoardGameService>(); 
+builder.Services.AddScoped<IBoardGameService, BoardGameService>();
+builder.Services.AddScoped<IAuthorizeService, AuthorizeService>();
 
 var app = builder.Build();
 
