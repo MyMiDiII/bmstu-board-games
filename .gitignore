@@ -6,6 +6,8 @@
 *.dvi
 *.out
 *.toc
+*.bcf
+*.run.xml
 
 # Additional
 *add/
