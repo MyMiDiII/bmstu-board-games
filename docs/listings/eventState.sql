@@ -1,17 +1,18 @@
 create or replace
 function get_event_state(eventDate date
-					   , startTime time
-					   , duration bigint
-					   , beginReg  timestamp
-					   , endReg timestamp
-					   , cancelled bool
-					   , deleted bool)
+                       , startTime time
+                       , duration bigint
+                       , beginReg  timestamp
+                       , endReg timestamp
+                       , cancelled bool
+                       , deleted bool)
 returns integer as
 $$
 declare
 	curTime timestamp = now();
 	beginEvent timestamp := eventDate + startTime;
-	endEvent timestamp := beginEvent + (duration * interval '1 minute');
+	endEvent timestamp := beginEvent
+                          + (duration * interval '1 minute');
 begin
 	case
 		when cancelled then
