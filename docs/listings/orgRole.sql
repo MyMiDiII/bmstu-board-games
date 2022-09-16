@@ -20,5 +20,5 @@ grant insert on public."Events"
 to organizer;
 
 grant update on public."Events"
-              , public."Organizers"
+			  , public."Organizers"
 to organizer;

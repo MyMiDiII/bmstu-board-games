@@ -9,6 +9,7 @@
 *.bcf
 *.run.xml
 *_minted-report/
+*.bak
 
 # Additional
 *add/
