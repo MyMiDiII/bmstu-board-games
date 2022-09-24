@@ -36,7 +36,7 @@
 
 ### Форма регистрации организатора
 
-<img src="./docs/img/orgReg.png" alt="orgReg" width="500%" />
+<img src="./docs/img/orgReg.png" alt="orgReg" width="500pt" />
 
 ### Форма регистрации игротеки
 
