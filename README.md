@@ -1,4 +1,4 @@
-# Курсовой проект по курсу "Базы данных"
+# Курсовая работа по "Базам данных"
 
 ![index](./docs/img/begin.png)
 
@@ -15,16 +15,34 @@
 
 ## Примеры работы программы
 
-<!---
-### Визуализация футболки
+### Страница игротеки
 
-<img src="./docs/data/img/rmblue.png" alt="Синяя футболка" width="500"/>
-<img src="./docs/data/img/rmorange.png" alt="Оранжевая футболка" width="500"/>
+<img src="./docs/img/event.png" alt="event"/>
 
-### Визуализация ткани
+### Страница настольной игры
 
-<img src="./docs/data/img/rmcloth.png" alt="Белая ткань" width="500"/>
--->
+<img src="./docs/img/game.png" alt="game" />
+
+### Формы регистрации и входа
+
+<img src="./docs/img/reg.png" alt="reg" />
+<img src="./docs/img/login.png" alt="login" />
+
+### Регистрация на игротеку
+
+<img src="./docs/img/regConf.png" alt="regConf" />
+
+### Форма регистрации организатора
+
+<img src="./docs/img/orgReg.png" alt="orgReg" />
+
+### Форма регистрации игротеки
+
+<img src="./docs/img/eventReg.png" alt="eventReg" />
+
+### Игротеки организатора
+
+<img src="./docs/img/myEvents.png" alt="myEvents" />
 
 ```
 Курсовая работа по курсу "Базы данных"
