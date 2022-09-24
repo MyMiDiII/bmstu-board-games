@@ -25,7 +25,7 @@
 
 ### Формы регистрации и входа
 
-<p align="center" valign="middle">
+<p align="center">
     <img src="./docs/img/reg.png" alt="reg" width="49.5%" />
     <img src="./docs/img/login.png" alt="login" width="49.5%" />
 </p>
@@ -36,7 +36,7 @@
 
 ### Форма регистрации организатора
 
-<img src="./docs/img/orgReg.png" alt="orgReg" />
+<img src="./docs/img/orgReg.png" alt="orgReg" width="500%" />
 
 ### Форма регистрации игротеки
 
