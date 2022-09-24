@@ -25,7 +25,7 @@
 
 ### Формы регистрации и входа
 
-<p align="center" valign="center">
+<p align="center" valign="middle">
     <img src="./docs/img/reg.png" alt="reg" width="49.5%" />
     <img src="./docs/img/login.png" alt="login" width="49.5%" />
 </p>
